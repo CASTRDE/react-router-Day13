@@ -22,8 +22,21 @@ const initTodos = [
 const todoSlice = createSlice({
   name: "todo",
   initialState: initTodos,
-  reducers: {},
+  reducers: {
+    addTodo: (state, action) => {
+      const todoText = action.payload;
+      console.log(action);
+      state.push({
+        id: Date.now(),
+        text: todoText,
+        done: false,
+      });//state.push(todo);
+    },
+  },
 });
+//todo/addTodo
+
+export const {addTodo} = todoSlice.actions;
 
 const store = configureStore({
   reducer: {
