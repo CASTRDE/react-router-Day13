@@ -1,5 +1,11 @@
+import { useSelector } from "react-redux/es/exports";
+import TodoGroup from "./TodoGroup";
+
 const TodoList = () => {
-    return <div>Todo List</div>
+    const todoList = useSelector((state) => state.todoList);
+
+    console.log(todoList);
+    return <TodoGroup todoList={todoList}/>;
 };
 
 export default TodoList;
