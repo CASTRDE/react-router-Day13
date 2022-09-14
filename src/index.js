@@ -5,45 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
+import store from './app/store';
 
-const initTodos = [
-  {
-    id: "cc53dc26-61b0-406b-99dd-b8825dd2ceec",
-    text: "todo example",
-    done: false,
-  },
-  {
-    id: "dd53dc26-b061-6b40-dd99-82b85dd2ce90",
-    text: "first todo item",
-    done: false,
-  },
-]
 
-const todoSlice = createSlice({
-  name: "todo",
-  initialState: initTodos,
-  reducers: {
-    addTodo: (state, action) => {
-      const todoText = action.payload;
-      console.log(action);
-      state.push({
-        id: Date.now(),
-        text: todoText,
-        done: false,
-      });//state.push(todo);
-    },
-  },
-});
-//todo/addTodo
 
-export const {addTodo} = todoSlice.actions;
 
-const store = configureStore({
-  reducer: {
-    todoList: todoSlice.reducer,
-  },
-});
-// console.log(store);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

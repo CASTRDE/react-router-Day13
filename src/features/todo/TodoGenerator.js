@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../..";
+import { addTodo } from "./todoSlice";
 
 const TodoGenerator = () => {
     const [todoText, setTodoText] = useState("");
