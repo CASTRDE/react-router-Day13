@@ -30,8 +30,21 @@ const initTodos = [
         const id = action.payload;
         return state.filter((todo) => todo.id !== id); ///returns all list without the matching id
       },
+      toggleTodo: (state, action) => {
+        const id = action.payload;
+        // return state.map((todo) => 
+        //     todo.id === id ? {...todo, done: !todo.done} : todo
+        // );
+        return state.map((todo) => {
+            if(todo.id === id) {
+                const updatedTodo = { ...todo, done: !todo.done };
+                return updatedTodo;
+            }
+            return todo;
+        });
+      },
     },
   });
   
-  export const {addTodo, deleteTodo} = todoSlice.actions;
+  export const {addTodo, deleteTodo, toggleTodo} = todoSlice.actions;
   export default todoSlice;
