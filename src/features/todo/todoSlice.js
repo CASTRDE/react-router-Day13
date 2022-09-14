@@ -28,7 +28,7 @@ const initTodos = [
       },
       deleteTodo: (state, action) => {
         const id = action.payload;
-        return state.filter(todo => todo.id !== id); ///returns all list without the matching id
+        return state.filter((todo) => todo.id !== id); ///returns all list without the matching id
       },
     },
   });

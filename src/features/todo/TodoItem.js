@@ -12,7 +12,7 @@ const TodoItem = (props) => {
     return (
         <div>
             <span>{todo.text}</span>
-            <span onClick={onDelete}>&times;</span>
+            <span onClick={onDelete}> &times;</span>
         </div>
     );
 }
