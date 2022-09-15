@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo, toggleTodo } from "./todoSlice";
 import "./TodoItem.css";
-import { deleteTodoItem } from "../../api/todos";
+import { deleteTodoItem, toggleTodoItem } from "../../api/todos";
 
 const TodoItem = (props) => {
     const {todo} = props;
@@ -15,7 +15,10 @@ const TodoItem = (props) => {
     }
 
     const onToggle = () => {
-        dispatch(toggleTodo(todo.id));
+        toggleTodoItem(todo.id, !todo.done).then((res) => {
+            dispatch(toggleTodo(res.data));
+            dispatch(toggleTodo(todo.id));
+        });
     }
 
     return (
