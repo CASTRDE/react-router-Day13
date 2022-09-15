@@ -11,3 +11,8 @@ export function getTodoList(){
 export function addTodoItem(data){
     return api.post("/todos", data);
 }
+
+export function deleteTodoItem(id){
+    console.log(id);
+    return api.delete(`/todos/${id}`);
+}
