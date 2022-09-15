@@ -12,7 +12,7 @@ const TodoGenerator = () => {
     };
 
     const onAdd = () => {
-        const todo = {text: "text", done: false}
+        const todo = {text: todoText, done: false}
         addTodoItem(todo).then((res) => {
             dispatch(addTodo(res.data));
             setTodoText("");
