@@ -17,6 +17,9 @@ const initTodos = [
     name: "todo",
     initialState: initTodos,
     reducers: {
+      initData: (state, action) => {
+        return action.payload
+      },
       addTodo: (state, action) => {
         const todoText = action.payload;
         const todo = {
@@ -43,5 +46,5 @@ const initTodos = [
     },
   });
   
-  export const {addTodo, deleteTodo, toggleTodo} = todoSlice.actions;
+  export const {addTodo, deleteTodo, toggleTodo, initData} = todoSlice.actions;
   export default todoSlice;
