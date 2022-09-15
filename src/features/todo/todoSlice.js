@@ -21,13 +21,7 @@ const initTodos = [
         return action.payload
       },
       addTodo: (state, action) => {
-        const todoText = action.payload;
-        const todo = {
-          id: Date.now(),
-          text: todoText,
-          done: false,
-        }
-        state.push(todo);
+        state.push(action.payload);
       },
       deleteTodo: (state, action) => {
         const id = action.payload;

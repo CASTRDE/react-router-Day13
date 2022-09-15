@@ -7,3 +7,7 @@ const api = axios.create({
 export function getTodoList(){
     return api.get("/todos");
 }
+
+export function addTodoItem(data){
+    return api.post("/todos", data);
+}
