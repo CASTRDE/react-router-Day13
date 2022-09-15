@@ -28,13 +28,10 @@ const initTodos = [
       },
       deleteTodo: (state, action) => {
         const id = action.payload;
-        return state.filter((todo) => todo.id !== id); ///returns all list without the matching id
+        return state.filter((todo) => todo.id !== id);
       },
       toggleTodo: (state, action) => {
         const id = action.payload;
-        // return state.map((todo) => 
-        //     todo.id === id ? {...todo, done: !todo.done} : todo
-        // );
         return state.map((todo) => {
             if(todo.id === id) {
                 const updatedTodo = { ...todo, done: !todo.done };
